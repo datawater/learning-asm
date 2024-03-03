@@ -34,7 +34,6 @@ factorial:
     jmp .loop
 
 .mulled_into_rdx:
-
     mov rax, rdx
     jmp .loop_tail
 
