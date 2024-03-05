@@ -26,7 +26,8 @@ factorial:
     
     cmp r8, rdx
     jne .mulled_into_rdx
-
+    jmp .loop_tail
+    
 .loop_tail:
     inc rcx
     cmp rcx, rdi
