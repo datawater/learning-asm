@@ -8,7 +8,7 @@ factorial:
     ; counter = 1, result = 1, clears rdx
     mov rcx, 1
     mov rax, 1
-    mov rdx, 0
+    xor rdx, rdx
 
     ; if (input <= 0) goto error
     cmp rdi, 0
@@ -53,10 +53,10 @@ _start:
     mov rdi, printf_format
     mov rsi, [n]
     mov rdx, rax
-    mov al, 0
+    xor al, al
     call printf
 
-    mov rdi, 0
+    xor rdi, rdi
     call exit
 
 SECTION .data

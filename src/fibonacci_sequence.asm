@@ -6,7 +6,7 @@ global _start
 
 fibonacci:
     ; a = 0, b = 1, counter = 2
-    mov r8, 0
+    xor r8, r8
     mov r9, 1
     mov r11, 2
 
@@ -35,14 +35,14 @@ fibonacci:
     jmp .end
 
 .one:
-    mov r9, 0
+    xor r9, r9
     jmp .end
 
 .less_than_one:
     mov rdi, fib_less_than_one_error
     call puts
 
-    mov r9, 0
+    xor r9, r9
     jmp .end
 
 .end:
@@ -56,10 +56,10 @@ _start:
     mov rdi, printf_format
     mov rsi, [fib_limit]
     mov rdx, rax
-    mov al, 0
+    xor al, al
     call printf
 
-    mov rdi, 0
+    xor rdi, rdi
     call exit
 
 SECTION .data

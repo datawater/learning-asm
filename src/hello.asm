@@ -8,7 +8,7 @@ _start:
     mov rdi, hello_world
     call puts
 
-    mov rdi, 0
+    xor rdi, rdi
     call exit
 
 SECTION .data
